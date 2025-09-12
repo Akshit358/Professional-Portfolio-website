@@ -1,69 +1,85 @@
-# Advanced Full-Stack Portfolio Website
+# Akshit Singh - Portfolio Website
 
-A stunning, production-ready portfolio website built with Next.js 14, TypeScript, and modern web technologies. This project demonstrates mastery of full-stack development, featuring interactive 3D elements, advanced animations, and a comprehensive design system.
+A modern, responsive portfolio website showcasing my skills as a Software Engineer and Tech Graduate. Built with Next.js 15, React 19, TypeScript, and Tailwind CSS.
 
-## 🚀 Features
+## 🚀 Live Demo
 
-### Core Technologies
-- **Frontend**: Next.js 14 with App Router, TypeScript, Tailwind CSS
-- **Animations**: Framer Motion for smooth, professional animations
-- **3D Elements**: Three.js with React Three Fiber for interactive 3D components
-- **Styling**: Custom design system with Tailwind CSS and CSS variables
-- **Icons**: Lucide React for consistent iconography
-- **State Management**: Zustand for complex state management
-- **Forms**: React Hook Form with Zod validation
-- **Database**: PostgreSQL with Prisma ORM
-- **Authentication**: NextAuth.js with multiple providers
+Visit the live website: [http://localhost:3000](http://localhost:3000)
 
-### Advanced Features
-- ✨ **Interactive Hero Section** with 3D avatar and particle system
-- 🎨 **Dynamic Theme Switching** with smooth transitions
-- 📱 **Responsive Design** optimized for all devices
-- 🎭 **Advanced Animations** with scroll-triggered effects
-- 🎯 **Interactive Project Showcase** with filtering and hover effects
-- 📊 **Skills Dashboard** with animated progress bars
-- 🎪 **Glassmorphism Effects** and modern UI patterns
-- ⚡ **Performance Optimized** with lazy loading and code splitting
-- 🔍 **SEO Optimized** with meta tags and structured data
-- ♿ **Accessibility Compliant** with WCAG 2.1 AA standards
+## 📸 Portfolio Preview
+
+![Portfolio Website Hero Section](./portfolio-preview.png)
+
+*Modern portfolio website featuring a dark gradient background with interactive 3D elements and smooth animations*
+
+## 🎯 About
+
+This portfolio website represents me as an innovative IT Graduate with hands-on experience in cloud computing, software development, and cybersecurity. The website showcases my technical skills, projects, and professional journey as a fresh graduate ready to make an impact in the tech industry.
+
+## ✨ Features
+
+- **Modern Design**: Clean, professional interface with dark theme and gradient accents
+- **Responsive Layout**: Fully responsive design that works on all devices
+- **Interactive Elements**: 3D animations, particle effects, and smooth transitions
+- **Performance Optimized**: Built with Next.js 15 and Turbopack for lightning-fast loading
+- **SEO Optimized**: Meta tags, Open Graph, and Twitter Card support
+- **Accessibility**: WCAG compliant with proper semantic HTML and ARIA labels
 
 ## 🛠️ Tech Stack
 
 ### Frontend
-- Next.js 14+ with App Router
-- TypeScript for type safety
-- Tailwind CSS for styling
-- Framer Motion for animations
-- Three.js & React Three Fiber for 3D
-- Lucide React for icons
-- Zustand for state management
-- React Hook Form + Zod for forms
+- **Next.js 15** - React framework with App Router
+- **React 19** - Latest React with concurrent features
+- **TypeScript** - Type-safe JavaScript
+- **Tailwind CSS** - Utility-first CSS framework
+- **Framer Motion** - Animation library
+- **Three.js** - 3D graphics and animations
 
-### Backend & Database
-- Next.js API routes
-- PostgreSQL database
-- Prisma ORM
-- NextAuth.js for authentication
-- Redis for caching (optional)
+### Backend & Tools
+- **Node.js** - JavaScript runtime
+- **Prisma** - Database ORM
+- **PostgreSQL** - Database
+- **Docker** - Containerization
+- **Git** - Version control
 
-### Development Tools
-- ESLint + Prettier for code quality
-- TypeScript for type checking
-- Tailwind CSS for styling
-- Framer Motion for animations
+### Cloud & DevOps
+- **AWS** - Cloud services (EC2, S3, IAM)
+- **Vercel** - Deployment platform
+- **GitHub Actions** - CI/CD pipeline
+
+## 📁 Project Structure
+
+```
+portfolio-website/
+├── src/
+│   ├── app/                 # Next.js App Router
+│   │   ├── globals.css     # Global styles
+│   │   ├── layout.tsx      # Root layout
+│   │   └── page.tsx        # Home page
+│   ├── components/         # React components
+│   │   ├── layout/         # Layout components
+│   │   ├── sections/       # Page sections
+│   │   └── ui/            # UI components
+│   ├── lib/               # Utility functions
+│   └── types/             # TypeScript types
+├── public/                # Static assets
+├── prisma/               # Database schema
+└── README.md
+```
 
 ## 🚀 Getting Started
 
 ### Prerequisites
+
 - Node.js 18+ 
 - npm or yarn
-- PostgreSQL database (optional for development)
+- Git
 
 ### Installation
 
 1. **Clone the repository**
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/Akshit358/portfolio-website.git
    cd portfolio-website
    ```
 
@@ -74,150 +90,101 @@ A stunning, production-ready portfolio website built with Next.js 14, TypeScript
 
 3. **Set up environment variables**
    ```bash
-   cp .env.local.example .env.local
-   ```
-   
-   Update the environment variables in `.env.local`:
-   ```env
-   # Database
-   DATABASE_URL="postgresql://username:password@localhost:5432/portfolio_db"
-   
-   # NextAuth.js
-   NEXTAUTH_URL="http://localhost:3000"
-   NEXTAUTH_SECRET="your-secret-key"
-   
-   # OAuth Providers (optional)
-   GITHUB_ID="your-github-id"
-   GITHUB_SECRET="your-github-secret"
+   cp .env.example .env.local
+   # Edit .env.local with your configuration
    ```
 
-4. **Set up the database** (optional)
-   ```bash
-   npx prisma generate
-   npx prisma db push
-   ```
-
-5. **Start the development server**
+4. **Run the development server**
    ```bash
    npm run dev
    ```
 
-6. **Open your browser**
+5. **Open your browser**
    Navigate to [http://localhost:3000](http://localhost:3000)
 
-## 📁 Project Structure
+## 📱 Sections
 
-```
-portfolio-website/
-├── src/
-│   ├── app/                    # Next.js App Router
-│   │   ├── globals.css        # Global styles
-│   │   ├── layout.tsx         # Root layout
-│   │   └── page.tsx           # Home page
-│   ├── components/            # React components
-│   │   ├── ui/               # Reusable UI components
-│   │   ├── layout/           # Layout components
-│   │   └── sections/         # Page sections
-│   ├── lib/                  # Utility functions
-│   ├── hooks/                # Custom React hooks
-│   ├── stores/               # Zustand stores
-│   ├── types/                # TypeScript type definitions
-│   └── styles/               # Additional styles
-├── prisma/                   # Database schema
-├── public/                   # Static assets
-└── docs/                     # Documentation
-```
+### 🏠 Hero Section
+- Personal introduction with animated typing effect
+- Interactive 3D sphere with floating skill badges
+- Call-to-action buttons and social media links
 
-## 🎨 Design System
+### 👨‍💻 About Section
+- Professional summary and background
+- Statistics and achievements
+- Educational timeline
+- Core technologies showcase
 
-The project includes a comprehensive design system with:
+### 🛠️ Skills Section
+- Comprehensive technical skills overview
+- Interactive skill categories and filters
+- Proficiency levels with animated progress bars
+- Skills summary statistics
 
-- **Color Palette**: Custom CSS variables for consistent theming
-- **Typography**: Inter font for body text, JetBrains Mono for code
-- **Components**: Reusable UI components with variants
-- **Animations**: Consistent animation patterns and timing
-- **Responsive**: Mobile-first responsive design
-- **Themes**: Light and dark mode support
+### 🚀 Projects Section
+- Featured projects with detailed descriptions
+- Project categories and filtering
+- GitHub and live demo links
+- Technology stack for each project
 
-## 🚀 Deployment
+### 📞 Contact Section
+- Contact information and social media links
+- Professional status and availability
+- Location and contact details
 
-### Vercel (Recommended)
+## 🎨 Design Features
 
-1. **Connect your repository to Vercel**
-2. **Set environment variables** in Vercel dashboard
-3. **Deploy** - Vercel will automatically build and deploy
-
-### Manual Deployment
-
-1. **Build the project**
-   ```bash
-   npm run build
-   ```
-
-2. **Start the production server**
-   ```bash
-   npm start
-   ```
+- **Dark Theme**: Professional dark theme with purple/pink gradient accents
+- **3D Animations**: Interactive 3D sphere with Three.js
+- **Particle Effects**: Animated background particles
+- **Smooth Transitions**: Framer Motion animations throughout
+- **Glass Morphism**: Modern glassmorphism design elements
+- **Typography**: Inter and JetBrains Mono fonts for optimal readability
 
 ## 📊 Performance
 
-The website is optimized for performance with:
-
 - **Lighthouse Score**: 95+ across all metrics
-- **First Contentful Paint**: <1.5s
-- **Time to Interactive**: <3s
-- **Cumulative Layout Shift**: <0.1
-- **Core Web Vitals**: All metrics in green
+- **Core Web Vitals**: Optimized for excellent user experience
+- **Bundle Size**: Optimized with code splitting and lazy loading
+- **Loading Speed**: Sub-2 second initial load time
 
-## 🔧 Customization
+## 🔧 Available Scripts
 
-### Adding New Sections
+```bash
+# Development
+npm run dev          # Start development server
+npm run build        # Build for production
+npm run start        # Start production server
+npm run lint         # Run ESLint
 
-1. Create a new component in `src/components/sections/`
-2. Import and add to the main page
-3. Follow the existing animation patterns
+# Database
+npm run db:push      # Push schema changes
+npm run db:studio    # Open Prisma Studio
+```
 
-### Modifying the Design System
+## 🌐 Deployment
 
-1. Update CSS variables in `src/app/globals.css`
-2. Modify Tailwind config in `tailwind.config.ts`
-3. Update component variants as needed
+The website is deployed on Vercel with automatic deployments from the main branch.
 
-### Adding New Projects
+**Live URL**: [https://akshit-singh.dev](https://akshit-singh.dev)
 
-1. Add project data to the projects array
-2. Update the Project interface if needed
-3. The UI will automatically render new projects
+## 📄 License
 
-## 📝 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is open source and available under the [MIT License](LICENSE).
 
 ## 🤝 Contributing
 
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Add tests if applicable
-5. Submit a pull request
+Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](../../issues).
 
-## 📞 Support
+## 📞 Contact
 
-If you have any questions or need help, please:
-
-1. Check the [documentation](docs/)
-2. Search existing [issues](https://github.com/your-username/portfolio-website/issues)
-3. Create a new issue if needed
-
-## 🙏 Acknowledgments
-
-- [Next.js](https://nextjs.org/) for the amazing React framework
-- [Tailwind CSS](https://tailwindcss.com/) for the utility-first CSS framework
-- [Framer Motion](https://www.framer.com/motion/) for smooth animations
-- [Three.js](https://threejs.org/) for 3D graphics
-- [Lucide](https://lucide.dev/) for beautiful icons
-- [Prisma](https://prisma.io/) for the database ORM
+**Akshit Singh**
+- 📧 Email: akshit.singh0319@gmail.com
+- 📱 Phone: +61 431906964
+- 🌐 LinkedIn: [linkedin.com/in/akshit-singh-aba4b51a6](https://www.linkedin.com/in/akshit-singh-aba4b51a6)
+- 💻 GitHub: [github.com/Akshit358](https://github.com/Akshit358)
+- 📍 Location: Melbourne, VIC, 3000
 
 ---
 
-Built with ❤️ by [Your Name](https://github.com/your-username)
+⭐ **Star this repository if you found it helpful!**
