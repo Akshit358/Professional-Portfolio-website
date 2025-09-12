@@ -8,7 +8,9 @@ Visit the live website: [http://localhost:3000](http://localhost:3000)
 
 ## 📸 Portfolio Preview
 
-![Portfolio Website Hero Section](./portfolio-preview.png)
+<div align="center">
+  <img src="https://via.placeholder.com/800x500/1a1a2e/ffffff?text=Portfolio+Website+Preview" alt="Portfolio Website Hero Section" width="800" height="500" style="border-radius: 10px; box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
+</div>
 
 *Modern portfolio website featuring a dark gradient background with interactive 3D elements and smooth animations*
 
