@@ -1,0 +1,410 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// Authentication and User Management
+model Account {
+  id                String  @id @default(cuid())
+  userId            String
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String? @db.Text
+  access_token      String? @db.Text
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String? @db.Text
+  session_state     String?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+}
+
+model Session {
+  id           String   @id @default(cuid())
+  sessionToken String   @unique
+  userId       String
+  expires      DateTime
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model User {
+  id            String    @id @default(cuid())
+  name          String?
+  email         String    @unique
+  emailVerified DateTime?
+  image         String?
+  role          Role      @default(USER)
+  bio           String?   @db.Text
+  location      String?
+  website       String?
+  githubUrl     String?
+  linkedinUrl   String?
+  twitterUrl    String?
+  resumeUrl     String?
+  availability  String?
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+
+  accounts      Account[]
+  sessions      Session[]
+  projects      Project[]
+  blogPosts     BlogPost[]
+  skills        Skill[]
+  experiences   Experience[]
+  messages      Message[]
+  analytics     AnalyticsEvent[]
+  testimonials  Testimonial[]
+}
+
+model VerificationToken {
+  identifier String
+  token      String   @unique
+  expires    DateTime
+
+  @@unique([identifier, token])
+}
+
+enum Role {
+  USER
+  ADMIN
+}
+
+// Projects and Portfolio
+model Project {
+  id          String   @id @default(cuid())
+  title       String
+  description String   @db.Text
+  content     String?  @db.Text
+  slug        String   @unique
+  featured    Boolean  @default(false)
+  githubUrl   String?
+  liveUrl     String?
+  imageUrl    String?
+  images      String[] // Array of image URLs
+  techStack   String[] // Array of technologies
+  category    String?
+  status      ProjectStatus @default(COMPLETED)
+  startDate   DateTime?
+  endDate     DateTime?
+  viewCount   Int      @default(0)
+  likes       Int      @default(0)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  userId      String
+  
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  tags        ProjectTag[]
+}
+
+model ProjectTag {
+  id        String   @id @default(cuid())
+  name      String   @unique
+  color     String?
+  projects  Project[]
+  createdAt DateTime @default(now())
+}
+
+enum ProjectStatus {
+  PLANNING
+  IN_PROGRESS
+  COMPLETED
+  ARCHIVED
+}
+
+// Skills and Experience
+model Skill {
+  id              String     @id @default(cuid())
+  name            String
+  category        SkillCategory
+  proficiency     Int        // 1-100 scale
+  yearsExperience Float?
+  description     String?    @db.Text
+  iconUrl         String?
+  color           String?
+  featured        Boolean    @default(false)
+  createdAt       DateTime   @default(now())
+  updatedAt       DateTime   @updatedAt
+  userId          String
+  
+  user            User       @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+enum SkillCategory {
+  PROGRAMMING_LANGUAGE
+  FRAMEWORK
+  DATABASE
+  TOOL
+  CLOUD
+  DESIGN
+  SOFT_SKILL
+  OTHER
+}
+
+model Experience {
+  id          String   @id @default(cuid())
+  company     String
+  position    String
+  description String   @db.Text
+  startDate   DateTime
+  endDate     DateTime?
+  current     Boolean  @default(false)
+  location    String?
+  companyUrl  String?
+  logoUrl     String?
+  skills      String[] // Array of skills used
+  achievements String[] // Array of key achievements
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  userId      String
+  
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model Education {
+  id          String   @id @default(cuid())
+  institution String
+  degree      String
+  field       String?
+  description String?  @db.Text
+  startDate   DateTime
+  endDate     DateTime?
+  current     Boolean  @default(false)
+  location    String?
+  logoUrl     String?
+  gpa         Float?
+  achievements String[] // Array of achievements
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model Certification {
+  id          String   @id @default(cuid())
+  name        String
+  issuer      String
+  description String?  @db.Text
+  issueDate   DateTime
+  expiryDate  DateTime?
+  credentialId String?
+  credentialUrl String?
+  logoUrl     String?
+  skills      String[] // Array of related skills
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+// Blog and Content
+model BlogPost {
+  id          String   @id @default(cuid())
+  title       String
+  content     String   @db.Text
+  excerpt     String?  @db.Text
+  slug        String   @unique
+  published   Boolean  @default(false)
+  featured    Boolean  @default(false)
+  imageUrl    String?
+  readTime    Int?     // Estimated reading time in minutes
+  viewCount   Int      @default(0)
+  likes       Int      @default(0)
+  publishedAt DateTime?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  userId      String
+  
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  tags        BlogTag[]
+  comments    Comment[]
+}
+
+model BlogTag {
+  id        String     @id @default(cuid())
+  name      String     @unique
+  color     String?
+  posts     BlogPost[]
+  createdAt DateTime   @default(now())
+}
+
+model Comment {
+  id        String   @id @default(cuid())
+  content   String   @db.Text
+  author    String
+  email     String
+  website   String?
+  approved  Boolean  @default(false)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  postId    String
+  
+  post      BlogPost @relation(fields: [postId], references: [id], onDelete: Cascade)
+}
+
+// Contact and Communication
+model Message {
+  id        String      @id @default(cuid())
+  name      String
+  email     String
+  subject   String?
+  message   String      @db.Text
+  status    MessageStatus @default(UNREAD)
+  replied   Boolean     @default(false)
+  replyContent String?  @db.Text
+  createdAt DateTime    @default(now())
+  updatedAt DateTime    @updatedAt
+  userId    String?
+  
+  user      User?       @relation(fields: [userId], references: [id], onDelete: SetNull)
+}
+
+enum MessageStatus {
+  UNREAD
+  READ
+  REPLIED
+  ARCHIVED
+}
+
+model Testimonial {
+  id        String   @id @default(cuid())
+  name      String
+  position  String?
+  company   String?
+  content   String   @db.Text
+  rating    Int?     // 1-5 scale
+  imageUrl  String?
+  featured  Boolean  @default(false)
+  approved  Boolean  @default(false)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  userId    String
+  
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+// Analytics and Tracking
+model AnalyticsEvent {
+  id         String   @id @default(cuid())
+  eventType  String   // page_view, project_view, download, contact, etc.
+  page       String?
+  metadata   Json?    // Additional event data
+  userAgent  String?
+  ipAddress  String?
+  country    String?
+  city       String?
+  device     String?
+  browser    String?
+  referrer   String?
+  sessionId  String?
+  timestamp  DateTime @default(now())
+  userId     String?
+  
+  user       User?    @relation(fields: [userId], references: [id], onDelete: SetNull)
+}
+
+model PageView {
+  id        String   @id @default(cuid())
+  path      String
+  title     String?
+  referrer  String?
+  userAgent String?
+  ipAddress String?
+  country   String?
+  city      String?
+  device    String?
+  browser   String?
+  sessionId String?
+  timestamp DateTime @default(now())
+  
+  @@index([path])
+  @@index([timestamp])
+}
+
+// Configuration and Settings
+model SiteConfig {
+  id          String   @id @default(cuid())
+  key         String   @unique
+  value       String   @db.Text
+  type        ConfigType @default(STRING)
+  description String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+enum ConfigType {
+  STRING
+  NUMBER
+  BOOLEAN
+  JSON
+}
+
+// Newsletter and Subscriptions
+model Newsletter {
+  id          String   @id @default(cuid())
+  email       String   @unique
+  subscribed  Boolean  @default(true)
+  source      String?  // Where they subscribed from
+  tags        String[] // Subscription tags/interests
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+// Social Media Integration
+model SocialPost {
+  id         String   @id @default(cuid())
+  platform   String   // github, linkedin, twitter, etc.
+  postId     String   // Platform-specific post ID
+  content    String   @db.Text
+  url        String
+  imageUrl   String?
+  likes      Int      @default(0)
+  shares     Int      @default(0)
+  comments   Int      @default(0)
+  publishedAt DateTime
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+  
+  @@unique([platform, postId])
+}
+
+// GitHub Integration
+model GitHubRepo {
+  id          String   @id @default(cuid())
+  name        String
+  fullName    String   @unique
+  description String?  @db.Text
+  url         String
+  homepage    String?
+  language    String?
+  stars       Int      @default(0)
+  forks       Int      @default(0)
+  watchers    Int      @default(0)
+  size        Int      @default(0)
+  openIssues  Int      @default(0)
+  private     Boolean  @default(false)
+  archived    Boolean  @default(false)
+  disabled    Boolean  @default(false)
+  pushedAt    DateTime?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model GitHubCommit {
+  id        String   @id @default(cuid())
+  sha       String   @unique
+  message   String   @db.Text
+  author    String
+  date      DateTime
+  additions Int      @default(0)
+  deletions Int      @default(0)
+  repoName  String
+  url       String
+  createdAt DateTime @default(now())
+}

@@ -1,0 +1,256 @@
+"use client"
+
+import * as React from "react"
+import { motion } from "framer-motion"
+import { Canvas } from "@react-three/fiber"
+import { OrbitControls, Sphere, MeshDistortMaterial } from "@react-three/drei"
+import { Button } from "@/components/ui/button"
+import { ArrowDown, Download, Github, Linkedin } from "lucide-react"
+import { cn } from "@/lib/utils"
+
+// 3D Sphere Component
+function AnimatedSphere() {
+  return (
+    <Sphere visible args={[1, 100, 200]} scale={2}>
+      <MeshDistortMaterial
+        color="#3b82f6"
+        attach="material"
+        distort={0.3}
+        speed={1.5}
+        roughness={0}
+        metalness={0.5}
+      />
+    </Sphere>
+  )
+}
+
+// Particle System Component
+function ParticleField() {
+  const particles = React.useMemo(() => {
+    return Array.from({ length: 100 }, () => ({
+      x: Math.random() * 2000 - 1000,
+      y: Math.random() * 2000 - 1000,
+      z: Math.random() * 2000 - 1000,
+      size: Math.random() * 3 + 1,
+      opacity: Math.random() * 0.5 + 0.1,
+    }))
+  }, [])
+
+  return (
+    <div className="absolute inset-0 overflow-hidden pointer-events-none">
+      {particles.map((particle, index) => (
+        <motion.div
+          key={index}
+          className="absolute rounded-full bg-primary/20"
+          style={{
+            left: particle.x,
+            top: particle.y,
+            width: particle.size,
+            height: particle.size,
+            opacity: particle.opacity,
+          }}
+          animate={{
+            y: [particle.y, particle.y - 100, particle.y],
+            opacity: [particle.opacity, particle.opacity * 0.3, particle.opacity],
+          }}
+          transition={{
+            duration: Math.random() * 10 + 10,
+            repeat: Infinity,
+            ease: "linear",
+          }}
+        />
+      ))}
+    </div>
+  )
+}
+
+// Typing Animation Component
+function TypewriterText({ texts, className }: { texts: string[]; className?: string }) {
+  const [currentTextIndex, setCurrentTextIndex] = React.useState(0)
+  const [currentText, setCurrentText] = React.useState("")
+  const [isDeleting, setIsDeleting] = React.useState(false)
+
+  React.useEffect(() => {
+    const timeout = setTimeout(() => {
+      const fullText = texts[currentTextIndex]
+      
+      if (isDeleting) {
+        setCurrentText(fullText.substring(0, currentText.length - 1))
+        if (currentText === "") {
+          setIsDeleting(false)
+          setCurrentTextIndex((prev) => (prev + 1) % texts.length)
+        }
+      } else {
+        setCurrentText(fullText.substring(0, currentText.length + 1))
+        if (currentText === fullText) {
+          setTimeout(() => setIsDeleting(true), 2000)
+        }
+      }
+    }, isDeleting ? 50 : 100)
+
+    return () => clearTimeout(timeout)
+  }, [currentText, currentTextIndex, isDeleting, texts])
+
+  return (
+    <span className={cn("typewriter", className)}>
+      {currentText}
+    </span>
+  )
+}
+
+export function Hero() {
+  const roles = [
+    "Software Engineer",
+    "Cloud Computing Expert",
+    "Full-Stack Developer",
+    "Cybersecurity Enthusiast",
+    "AI & Data Science Specialist",
+    "Tech Graduate",
+  ]
+
+  return (
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Background Elements */}
+      <div className="absolute inset-0 mesh-bg" />
+      <ParticleField />
+      
+      {/* Gradient Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/20 to-background/80" />
+
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          {/* Left Column - Text Content */}
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            className="space-y-8"
+          >
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2, duration: 0.6 }}
+              className="space-y-4"
+            >
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight">
+                Hi, I&apos;m{" "}
+                <span className="gradient-text">Akshit Singh</span>
+              </h1>
+              <div className="text-2xl sm:text-3xl lg:text-4xl font-medium text-muted-foreground">
+                I&apos;m a{" "}
+                <TypewriterText 
+                  texts={roles} 
+                  className="text-primary font-semibold" 
+                />
+              </div>
+            </motion.div>
+
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.4, duration: 0.6 }}
+              className="text-lg text-muted-foreground max-w-lg leading-relaxed"
+            >
+              Innovative IT Graduate with hands-on experience in cloud computing, software development, and cybersecurity. 
+              Passionate about solving real-world problems through technology and eager to contribute fresh ideas to dynamic teams.
+            </motion.p>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.6, duration: 0.6 }}
+              className="flex flex-col sm:flex-row gap-4"
+            >
+              <Button size="lg" className="group">
+                View My Work
+                <ArrowDown className="ml-2 h-4 w-4 group-hover:translate-y-1 transition-transform" />
+              </Button>
+              <Button variant="outline" size="lg" className="group">
+                <Download className="mr-2 h-4 w-4 group-hover:scale-110 transition-transform" />
+                Download Resume
+              </Button>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.8, duration: 0.6 }}
+              className="flex space-x-4"
+            >
+              <Button variant="ghost" size="sm" asChild>
+                <a href="https://github.com/Akshit358" target="_blank" rel="noopener noreferrer">
+                  <Github className="h-5 w-5" />
+                </a>
+              </Button>
+              <Button variant="ghost" size="sm" asChild>
+                <a href="https://www.linkedin.com/in/akshit-singh-aba4b51a6" target="_blank" rel="noopener noreferrer">
+                  <Linkedin className="h-5 w-5" />
+                </a>
+              </Button>
+            </motion.div>
+          </motion.div>
+
+          {/* Right Column - 3D Scene */}
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="relative h-96 lg:h-[500px]"
+          >
+            <Canvas
+              camera={{ position: [0, 0, 5], fov: 75 }}
+              style={{ background: "transparent" }}
+            >
+              <ambientLight intensity={0.5} />
+              <directionalLight position={[10, 10, 5]} intensity={1} />
+              <pointLight position={[-10, -10, -5]} intensity={0.5} />
+              <AnimatedSphere />
+              <OrbitControls
+                enableZoom={false}
+                enablePan={false}
+                autoRotate
+                autoRotateSpeed={2}
+              />
+            </Canvas>
+            
+            {/* Floating Elements */}
+            <motion.div
+              className="absolute top-10 right-10 glass p-4 rounded-lg"
+              animate={{ y: [0, -10, 0] }}
+              transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+            >
+              <div className="text-sm font-medium">Python</div>
+              <div className="text-xs text-muted-foreground">Expert</div>
+            </motion.div>
+            
+            <motion.div
+              className="absolute bottom-10 left-10 glass p-4 rounded-lg"
+              animate={{ y: [0, 10, 0] }}
+              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+            >
+              <div className="text-sm font-medium">AWS</div>
+              <div className="text-xs text-muted-foreground">Advanced</div>
+            </motion.div>
+          </motion.div>
+        </div>
+      </div>
+
+      {/* Scroll Indicator */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1, duration: 0.6 }}
+        className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+      >
+        <motion.div
+          animate={{ y: [0, 10, 0] }}
+          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+          className="flex flex-col items-center space-y-2 text-muted-foreground"
+        >
+          <span className="text-sm">Scroll to explore</span>
+          <ArrowDown className="h-5 w-5" />
+        </motion.div>
+      </motion.div>
+    </section>
+  )
+}
