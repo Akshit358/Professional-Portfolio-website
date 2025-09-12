@@ -9,10 +9,10 @@ Visit the live website: [http://localhost:3000](http://localhost:3000)
 ## 📸 Portfolio Preview
 
 <div align="center">
-  <img src="https://via.placeholder.com/800x500/1a1a2e/ffffff?text=Portfolio+Website+Preview" alt="Portfolio Website Hero Section" width="800" height="500" style="border-radius: 10px; box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
+  <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Portfolio Website Hero Section" width="900" height="500" style="border-radius: 15px; box-shadow: 0 15px 35px rgba(0,0,0,0.4); border: 2px solid #6366f1;">
+  <br><br>
+  <em>Modern portfolio website featuring a dark gradient background with interactive 3D elements and smooth animations</em>
 </div>
-
-*Modern portfolio website featuring a dark gradient background with interactive 3D elements and smooth animations*
 
 ## 🎯 About
 
@@ -69,7 +69,7 @@ portfolio-website/
 └── README.md
 ```
 
-## 🚀 Getting Started
+## �� Getting Started
 
 ### Prerequisites
 
