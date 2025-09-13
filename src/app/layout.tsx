@@ -14,23 +14,23 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Akshit Singh - Software Engineer & Tech Graduate",
-  description: "Innovative IT Graduate with hands-on experience in cloud computing, software development, and cybersecurity. Passionate about solving real-world problems through technology.",
-  keywords: ["portfolio", "software engineer", "tech graduate", "cloud computing", "cybersecurity", "full-stack developer", "react", "python", "aws", "melbourne"],
+  title: "Akshit Singh - Graduate Software Engineer | Spring Boot & Full-Stack Developer",
+  description: "Graduate Software Engineer who turns complex ideas into clean, practical software. Certified on HackerRank, ranked on Kaggle, with 6 virtual internships at top companies including JP Morgan Chase, HPE, and Electronic Arts.",
+  keywords: ["portfolio", "graduate software engineer", "spring boot", "java developer", "full-stack developer", "microservices", "react", "typescript", "postgresql", "docker", "kubernetes", "melbourne", "virtual internships"],
   authors: [{ name: "Akshit Singh" }],
   creator: "Akshit Singh",
   openGraph: {
     type: "website",
     locale: "en_AU",
     url: "https://akshit-singh.dev",
-    title: "Akshit Singh - Software Engineer & Tech Graduate",
-    description: "Innovative IT Graduate with hands-on experience in cloud computing, software development, and cybersecurity. Passionate about solving real-world problems through technology.",
+    title: "Akshit Singh - Graduate Software Engineer | Spring Boot & Full-Stack Developer",
+    description: "Graduate Software Engineer who turns complex ideas into clean, practical software. Certified on HackerRank, ranked on Kaggle, with 6 virtual internships at top companies including JP Morgan Chase, HPE, and Electronic Arts.",
     siteName: "Akshit Singh Portfolio",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Akshit Singh - Software Engineer & Tech Graduate",
-    description: "Innovative IT Graduate with hands-on experience in cloud computing, software development, and cybersecurity. Passionate about solving real-world problems through technology.",
+    title: "Akshit Singh - Graduate Software Engineer | Spring Boot & Full-Stack Developer",
+    description: "Graduate Software Engineer who turns complex ideas into clean, practical software. Certified on HackerRank, ranked on Kaggle, with 6 virtual internships at top companies including JP Morgan Chase, HPE, and Electronic Arts.",
     creator: "@akshit_singh",
   },
   robots: {

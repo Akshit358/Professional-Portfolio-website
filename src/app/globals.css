@@ -60,6 +60,7 @@
   }
   
   html {
+  scroll-behavior: smooth;
     scroll-behavior: smooth;
   }
   
@@ -457,5 +458,47 @@
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
+  }
+}
+
+
+/* Clean gradient text styling */
+.gradient-text {
+  background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: inline-block;
+  position: relative;
+  z-index: 1;
+}
+
+/* Ensure clean header rendering */
+header {
+  contain: layout style;
+  position: relative;
+}
+
+/* Clean navigation styling */
+nav {
+  position: relative;
+  z-index: 10;
+}
+
+/* Prevent any duplication issues */
+.flex {
+  display: flex;
+}
+
+.hidden {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .md\:flex {
+    display: flex;
+  }
+  .md\:hidden {
+    display: none;
   }
 }

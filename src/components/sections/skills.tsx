@@ -17,32 +17,48 @@ interface Skill {
 
 const skills: Skill[] = [
   {
-    name: "Python",
-    level: 95,
-    category: "Programming",
-    icon: "🐍",
-    color: "from-yellow-400 to-orange-500",
-    description: "Advanced Python development with data science, AI/ML, and automation"
-  },
-  {
     name: "Java",
-    level: 90,
+    level: 95,
     category: "Programming",
     icon: "☕",
     color: "from-orange-500 to-red-500",
     description: "Object-oriented programming, Spring framework, and enterprise applications"
   },
   {
-    name: "JavaScript",
+    name: "Spring Boot",
+    level: 90,
+    category: "Frameworks",
+    icon: "🌱",
+    color: "from-green-500 to-green-700",
+    description: "Enterprise-grade microservices and REST API development"
+  },
+  {
+    name: "Python",
     level: 88,
+    category: "Programming",
+    icon: "🐍",
+    color: "from-yellow-400 to-orange-500",
+    description: "Data science, automation, and backend development"
+  },
+  {
+    name: "JavaScript",
+    level: 85,
     category: "Programming",
     icon: "🟨",
     color: "from-yellow-400 to-yellow-600",
     description: "Modern ES6+, async programming, and full-stack development"
   },
   {
-    name: "React",
+    name: "TypeScript",
     level: 85,
+    category: "Programming",
+    icon: "🔷",
+    color: "from-blue-500 to-blue-700",
+    description: "Type-safe JavaScript for scalable applications"
+  },
+  {
+    name: "React.js",
+    level: 88,
     category: "Frontend",
     icon: "⚛️",
     color: "from-blue-400 to-blue-600",
@@ -57,64 +73,240 @@ const skills: Skill[] = [
     description: "Server-side JavaScript with Express and API development"
   },
   {
-    name: "AWS",
+    name: "Next.js",
     level: 85,
-    category: "Cloud",
-    icon: "☁️",
-    color: "from-orange-400 to-orange-600",
-    description: "EC2, IAM, S3, and cloud infrastructure management"
+    category: "Frontend",
+    icon: "▲",
+    color: "from-gray-600 to-gray-800",
+    description: "React framework for production-ready applications"
+  },
+  {
+    name: "Express.js",
+    level: 80,
+    category: "Backend",
+    icon: "🚀",
+    color: "from-green-400 to-green-600",
+    description: "Fast, unopinionated web framework for Node.js"
+  },
+  {
+    name: "Django",
+    level: 75,
+    category: "Backend",
+    icon: "🎯",
+    color: "from-green-600 to-green-800",
+    description: "High-level Python web framework for rapid development"
+  },
+  {
+    name: "PostgreSQL",
+    level: 90,
+    category: "Database",
+    icon: "🐘",
+    color: "from-blue-600 to-blue-800",
+    description: "Advanced relational database with ACID compliance"
+  },
+  {
+    name: "MongoDB",
+    level: 85,
+    category: "Database",
+    icon: "🍃",
+    color: "from-green-400 to-green-600",
+    description: "NoSQL document database for scalable applications"
+  },
+  {
+    name: "MySQL",
+    level: 80,
+    category: "Database",
+    icon: "🐬",
+    color: "from-orange-500 to-orange-700",
+    description: "Relational database management system"
+  },
+  {
+    name: "Redis",
+    level: 75,
+    category: "Database",
+    icon: "🔴",
+    color: "from-red-500 to-red-700",
+    description: "In-memory data structure store for caching"
   },
   {
     name: "Docker",
-    level: 75,
+    level: 85,
     category: "DevOps",
     icon: "🐳",
     color: "from-blue-400 to-cyan-500",
     description: "Containerization and deployment automation"
   },
   {
-    name: "TensorFlow",
-    level: 70,
-    category: "AI/ML",
-    icon: "🧠",
-    color: "from-purple-400 to-purple-600",
-    description: "Machine learning and deep learning model development"
-  },
-  {
-    name: "MongoDB",
+    name: "Kubernetes",
     level: 80,
-    category: "Database",
-    icon: "🍃",
-    color: "from-green-400 to-green-600",
-    description: "NoSQL database design and management"
-  },
-  {
-    name: "Flutter",
-    level: 75,
-    category: "Mobile",
-    icon: "📱",
-    color: "from-blue-500 to-cyan-500",
-    description: "Cross-platform mobile app development"
+    category: "DevOps",
+    icon: "⚙️",
+    color: "from-blue-500 to-blue-700",
+    description: "Container orchestration and management"
   },
   {
     name: "Git",
     level: 90,
     category: "Tools",
-    icon: "📝",
-    color: "from-gray-600 to-gray-800",
+    icon: "🐙",
+    color: "from-orange-500 to-red-500",
     description: "Version control and collaborative development"
   },
   {
-    name: "Cybersecurity",
-    level: 70,
+    name: "GitHub Actions",
+    level: 85,
+    category: "DevOps",
+    icon: "⚡",
+    color: "from-gray-600 to-gray-800",
+    description: "CI/CD automation and workflow management"
+  },
+  {
+    name: "AWS",
+    level: 80,
+    category: "Cloud",
+    icon: "☁️",
+    color: "from-orange-400 to-orange-600",
+    description: "Cloud infrastructure and services"
+  },
+  {
+    name: "Vercel",
+    level: 85,
+    category: "DevOps",
+    icon: "▲",
+    color: "from-gray-700 to-black",
+    description: "Frontend deployment and hosting platform"
+  },
+  {
+    name: "Apache Kafka",
+    level: 80,
+    category: "Tools",
+    icon: "🚀",
+    color: "from-red-500 to-red-700",
+    description: "Distributed streaming platform for real-time data"
+  },
+  {
+    name: "REST APIs",
+    level: 90,
+    category: "Backend",
+    icon: "🔗",
+    color: "from-blue-500 to-blue-700",
+    description: "RESTful web service design and implementation"
+  },
+  {
+    name: "GraphQL",
+    level: 75,
+    category: "Backend",
+    icon: "🔷",
+    color: "from-pink-500 to-purple-500",
+    description: "Query language for APIs and runtime"
+  },
+  {
+    name: "Microservices",
+    level: 85,
+    category: "Architecture",
+    icon: "🏗️",
+    color: "from-indigo-500 to-purple-500",
+    description: "Distributed system architecture design"
+  },
+  {
+    name: "OAuth",
+    level: 80,
     category: "Security",
-    icon: "🔒",
-    color: "from-red-400 to-red-600",
-    description: "Ethical hacking, OWASP, and security best practices"
+    icon: "🔐",
+    color: "from-green-500 to-blue-500",
+    description: "Authorization framework for secure access"
+  },
+  {
+    name: "JWT",
+    level: 85,
+    category: "Security",
+    icon: "🎫",
+    color: "from-purple-500 to-pink-500",
+    description: "JSON Web Token for secure authentication"
+  },
+  {
+    name: "JUnit",
+    level: 85,
+    category: "Testing",
+    icon: "🧪",
+    color: "from-green-500 to-green-700",
+    description: "Unit testing framework for Java applications"
+  },
+  {
+    name: "Mockito",
+    level: 80,
+    category: "Testing",
+    icon: "🎭",
+    color: "from-blue-500 to-blue-700",
+    description: "Mocking framework for Java unit tests"
+  },
+  {
+    name: "Jest",
+    level: 80,
+    category: "Testing",
+    icon: "✨",
+    color: "from-orange-500 to-red-500",
+    description: "JavaScript testing framework"
+  },
+  {
+    name: "Cypress",
+    level: 75,
+    category: "Testing",
+    icon: "🌲",
+    color: "from-green-500 to-green-700",
+    description: "End-to-end testing framework"
+  },
+  {
+    name: "Testcontainers",
+    level: 70,
+    category: "Testing",
+    icon: "📦",
+    color: "from-blue-500 to-blue-700",
+    description: "Integration testing with Docker containers"
+  },
+  {
+    name: "C++",
+    level: 75,
+    category: "Programming",
+    icon: "💻",
+    color: "from-blue-600 to-blue-800",
+    description: "System programming and performance optimization"
+  },
+  {
+    name: "SQL",
+    level: 85,
+    category: "Database",
+    icon: "📊",
+    color: "from-blue-500 to-blue-700",
+    description: "Database query language and optimization"
+  },
+  {
+    name: "HTML/CSS",
+    level: 90,
+    category: "Frontend",
+    icon: "🌐",
+    color: "from-orange-500 to-pink-500",
+    description: "Web markup and styling languages"
+  },
+  {
+    name: "Three.js",
+    level: 80,
+    category: "Frontend",
+    icon: "🎮",
+    color: "from-purple-500 to-pink-500",
+    description: "3D graphics library for web applications"
+  },
+  {
+    name: "Framer Motion",
+    level: 85,
+    category: "Frontend",
+    icon: "🎬",
+    color: "from-pink-500 to-purple-500",
+    description: "Animation library for React applications"
   }
 ]
 
-const categories = ["All", "Programming", "Frontend", "Backend", "Cloud", "DevOps", "AI/ML", "Database", "Mobile", "Tools", "Security"]
+const categories = ["All", "Programming", "Frameworks", "Frontend", "Backend", "Database", "DevOps", "Cloud", "Tools", "Architecture", "Security", "Testing"]
 
 export function Skills() {
   const [selectedCategory, setSelectedCategory] = React.useState("All")
@@ -139,7 +331,7 @@ export function Skills() {
   }
 
   return (
-    <section className="py-20 bg-background">
+    <section id="skills" className="py-20 bg-background">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div

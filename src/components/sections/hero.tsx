@@ -8,6 +8,17 @@ import { Button } from "@/components/ui/button"
 import { ArrowDown, Download, Github, Linkedin } from "lucide-react"
 import { cn } from "@/lib/utils"
 
+
+  const downloadResume = () => {
+    const link = document.createElement('a');
+    link.href = '/AkshitCV.pdf';
+    link.download = 'AkshitCV.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
+
 // 3D Sphere Component
 function AnimatedSphere() {
   return (
@@ -100,6 +111,12 @@ function TypewriterText({ texts, className }: { texts: string[]; className?: str
 
 export function Hero() {
   const roles = [
+    "Graduate Software Engineer",
+    "Spring Boot Developer",
+    "Full-Stack Engineer",
+    "Microservices Architect",
+    "React.js Specialist",
+    "Java Developer",
     "Software Engineer",
     "Cloud Computing Expert",
     "Full-Stack Developer",
@@ -161,11 +178,16 @@ export function Hero() {
               transition={{ delay: 0.6, duration: 0.6 }}
               className="flex flex-col sm:flex-row gap-4"
             >
-              <Button size="lg" className="group">
+              <Button size="lg" className="group" onClick={() => {
+                const element = document.querySelector("#projects");
+                if (element) {
+                  element.scrollIntoView({ behavior: "smooth" });
+                }
+              }}>
                 View My Work
                 <ArrowDown className="ml-2 h-4 w-4 group-hover:translate-y-1 transition-transform" />
               </Button>
-              <Button variant="outline" size="lg" className="group">
+              <Button variant="outline" size="lg" className="group" onClick={downloadResume}>
                 <Download className="mr-2 h-4 w-4 group-hover:scale-110 transition-transform" />
                 Download Resume
               </Button>
@@ -219,7 +241,7 @@ export function Hero() {
               animate={{ y: [0, -10, 0] }}
               transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
             >
-              <div className="text-sm font-medium">Python</div>
+              <div className="text-sm font-medium">Java</div>
               <div className="text-xs text-muted-foreground">Expert</div>
             </motion.div>
             
@@ -228,7 +250,7 @@ export function Hero() {
               animate={{ y: [0, 10, 0] }}
               transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 1 }}
             >
-              <div className="text-sm font-medium">AWS</div>
+              <div className="text-sm font-medium">Spring Boot</div>
               <div className="text-xs text-muted-foreground">Advanced</div>
             </motion.div>
           </motion.div>
