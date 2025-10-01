@@ -22,42 +22,78 @@ interface Project {
 const projects: Project[] = [
   {
     id: "1",
-    title: "Midas Core - Financial Transaction Processing System",
-    description: "Enterprise-grade financial transaction processing system with microservices architecture",
-    longDescription: "Accomplished enterprise-grade financial transaction processing system by architecting microservices with Spring Boot, Kafka, PostgreSQL, and 25+ REST APIs, resulting in 10,000+ TPS with 99.9% uptime and PCI DSS compliance. Enhanced system reliability and performance by implementing 95% test coverage, Docker/Kubernetes CI/CD pipeline, and Prometheus monitoring.",
+    title: "FinWise - AI-Powered Financial Risk Analyzer",
+    description: "Cloud-based smart financial platform with real-time spending analysis and investment optimization",
+    longDescription: "Built an AI-powered financial platform for real-time spending analysis, risk prediction, and investment optimization. Designed interactive dashboard with APIs (Plaid, Yahoo Finance, CoinGecko) and ML models (Scikit-learn, XGBoost, PyTorch). Integrated AWS SNS/Twilio alerts and secure AWS S3 document vault with encryption. Added crypto market tracking for Bitcoin, Ethereum, and altcoins.",
     image: "/api/placeholder/600/400",
-    technologies: ["Spring Boot", "Apache Kafka", "PostgreSQL", "Docker", "Kubernetes", "REST APIs", "Microservices"],
+    technologies: ["React.js", "FastAPI", "AWS/GCP", "Plaid API", "Machine Learning", "PostgreSQL", "Docker"],
+    githubUrl: "https://github.com/Akshit358/FinWise",
+    liveUrl: "#",
+    featured: true,
+    category: "FinTech"
+  },
+  {
+    id: "2",
+    title: "Customer Loyalty Analytics Platform",
+    description: "Full-stack loyalty management system with transaction processing and analytics dashboard",
+    longDescription: "Built a loyalty management system with .NET 8 backend and React 18 frontend, featuring transaction processing, points redemption, and analytics dashboard. Implemented JWT login, tier-based upgrades, and mobile-friendly UI. Used Serilog for structured logging and Swagger for API documentation.",
+    image: "/api/placeholder/600/400",
+    technologies: [".NET 8", "React 18", "SQLite", "JWT", "Serilog", "Swagger", "Entity Framework"],
+    githubUrl: "https://github.com/Akshit358/Customer-Loyalty-Analytics-Platform",
+    liveUrl: "#",
+    featured: true,
+    category: "Enterprise"
+  },
+  {
+    id: "3",
+    title: "Midas Core - Financial Transaction Processing",
+    description: "High-volume transaction engine with debit/credit processing and audit trails",
+    longDescription: "Built a high-volume transaction engine with debit/credit processing, audit trails, and merchant APIs. Integrated Kafka for event-driven processing and Prometheus + Grafana monitoring. Secured APIs with JWT + RBAC and ensured ACID compliance with Postgres + Flyway. Containerized with Docker for scalable deployments.",
+    image: "/api/placeholder/600/400",
+    technologies: ["Java", "Spring Boot", "Kafka", "PostgreSQL", "Docker", "Prometheus", "Grafana"],
     githubUrl: "https://github.com/Akshit358/Midas-Core---Financial-Transaction-Processing-System",
     liveUrl: "#",
     featured: true,
     category: "Enterprise"
   },
   {
-    id: "2",
-    title: "Professional Portfolio Website",
-    description: "Modern, responsive portfolio website with 3D animations and optimized performance",
-    longDescription: "Designed and developed a modern, responsive portfolio using Next.js 15, React 19, TypeScript, and Tailwind CSS, showcasing technical skills, projects, and professional achievements. Implemented interactive 3D animations, particle effects, and smooth transitions with Three.js and Framer Motion, achieving 95+ Lighthouse scores and sub-2 second load times.",
-    image: "/api/placeholder/600/400",
-    technologies: ["Next.js 15", "React 19", "TypeScript", "Tailwind CSS", "Three.js", "Framer Motion", "Vercel"],
-    githubUrl: "https://github.com/Akshit358/Professional-Portfolio-website",
-    liveUrl: "#",
-    featured: true,
-    category: "Frontend"
-  },
-  {
-    id: "3",
+    id: "4",
     title: "Job Tracker CRM (Full-Stack Web Application)",
     description: "Full-stack job application tracker with role-based access control and analytics",
     longDescription: "Developed a full-stack job application tracker with React.js frontend and Django REST backend, supporting 3+ user roles and 15+ sample applications for efficient workflow management. Implemented JWT-based authentication, email verification, and role-based access control, with dynamic dashboards using Recharts for interactive analytics.",
     image: "/api/placeholder/600/400",
-    technologies: ["React.js", "Django", "PostgreSQL", "JWT", "Recharts", "Email Verification", "REST API"],
+    technologies: ["React.js", "Django REST", "PostgreSQL", "JWT", "Recharts", "Email Verification", "REST API"],
     githubUrl: "https://github.com/Akshit358/Job-Tracker-CRM",
     liveUrl: "#",
     featured: true,
     category: "Full-Stack"
   },
   {
-    id: "4",
+    id: "5",
+    title: "BugTracker+ - Flask Bug Tracking System",
+    description: "Modular bug tracking system for developers and small teams",
+    longDescription: "Developed a modular bug tracking system for developers and small teams. Features bug forms, logs, SQLAlchemy ORM, CSRF protection, and unit tests. Designed for future API integration, cloud deployment, and status tracking.",
+    image: "/api/placeholder/600/400",
+    technologies: ["Python", "Flask", "SQLAlchemy", "CSRF Protection", "Unit Testing", "REST API"],
+    githubUrl: "https://github.com/Akshit358/Bug-Tracker",
+    liveUrl: "#",
+    featured: false,
+    category: "Web App"
+  },
+  {
+    id: "6",
+    title: "Weather App - Real-Time Dashboard",
+    description: "Responsive weather app using OpenWeatherMap API for real-time weather data",
+    longDescription: "Built a responsive weather app using OpenWeatherMap API for real-time weather data. Displayed temperature, weather type, city/date, with dynamic backgrounds per weather condition. Optimized for multiple run modes: browser, Python server, VS Code Live Server.",
+    image: "/api/placeholder/600/400",
+    technologies: ["HTML", "CSS", "JavaScript", "OpenWeatherMap API", "Responsive Design"],
+    githubUrl: "https://github.com/Akshit358/Weather-app-",
+    liveUrl: "#",
+    featured: false,
+    category: "Frontend"
+  },
+  {
+    id: "7",
     title: "EV Charging Station Chatbot",
     description: "Team project: Website for EV charging station company with chatbot integration",
     longDescription: "Led a team of 11 to design and develop a comprehensive website for an EV charging station company. Features include real-time charging station availability, payment processing, user accounts, and an intelligent chatbot for customer support.",
@@ -69,32 +105,20 @@ const projects: Project[] = [
     category: "Full-Stack"
   },
   {
-    id: "5",
-    title: "Bugbox Web Interface",
-    description: "Web interface for 500+ users with dual-mode interactive coding experience",
-    longDescription: "Built web interface using React, Node.js, and MongoDB for 500+ users. Integrated Blockly and scripts to enable dual-mode interactive coding experience. Accelerated app load time by 60% through API and UI optimization.",
+    id: "8",
+    title: "Professional Portfolio Website",
+    description: "Modern, responsive portfolio website with 3D animations and optimized performance",
+    longDescription: "Designed and developed a modern, responsive portfolio using Next.js 15, React 19, TypeScript, and Tailwind CSS, showcasing technical skills, projects, and professional achievements. Implemented interactive 3D animations, particle effects, and smooth transitions with Three.js and Framer Motion, achieving 95+ Lighthouse scores and sub-2 second load times.",
     image: "/api/placeholder/600/400",
-    technologies: ["React", "Node.js", "MongoDB", "Blockly", "API Optimization", "UI/UX"],
-    githubUrl: "https://github.com/Akshit358",
-    liveUrl: "#",
+    technologies: ["Next.js 15", "React 19", "TypeScript", "Tailwind CSS", "Three.js", "Framer Motion", "Vercel"],
+    githubUrl: "https://github.com/Akshit358/Professional-Portfolio-website",
+    liveUrl: "http://localhost:3001",
     featured: false,
-    category: "Web App"
-  },
-  {
-    id: "6",
-    title: "Real-time Stock Monitoring App",
-    description: "Java application with Yahoo Finance API integration for stock market insights",
-    longDescription: "Developed real-time stock monitoring app in Java with Yahoo Finance API and JavaFX, providing actionable insights for internal teams. Visualized loan workflows with UML state diagrams and proposed ML-driven credit risk models for Citi Bank virtual internship.",
-    image: "/api/placeholder/600/400",
-    technologies: ["Java", "JavaFX", "Yahoo Finance API", "UML", "Machine Learning", "Data Visualization"],
-    githubUrl: "https://github.com/Akshit358",
-    liveUrl: "#",
-    featured: false,
-    category: "Desktop App"
+    category: "Frontend"
   }
 ]
 
-const categories = ["All", "Enterprise", "Frontend", "Full-Stack", "Web App", "Desktop App"]
+const categories = ["All", "FinTech", "Enterprise", "Frontend", "Full-Stack", "Web App"]
 
 export function Projects() {
   const [selectedCategory, setSelectedCategory] = React.useState("All")

@@ -61,10 +61,10 @@ export function Contact() {
                 <div>
                   <h4 className="font-semibold">Email</h4>
                   <a 
-                    href="mailto:akshit.singh0319@gmail.com" 
+                    href="mailto:ak2040deau@gmail.com" 
                     className="text-muted-foreground hover:text-primary transition-colors"
                   >
-                    akshit.singh0319@gmail.com
+                    ak2040deau@gmail.com
                   </a>
                 </div>
               </div>
@@ -189,7 +189,7 @@ export function Contact() {
                 Let&apos;s discuss your ideas and bring them to life with clean, efficient code.
               </p>
               <Button asChild>
-                <a href="mailto:akshit.singh0319@gmail.com">
+                <a href="mailto:ak2040deau@gmail.com">
                   Send me an email
                 </a>
               </Button>

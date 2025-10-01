@@ -37,15 +37,33 @@ function AnimatedSphere() {
 
 // Particle System Component
 function ParticleField() {
-  const particles = React.useMemo(() => {
-    return Array.from({ length: 100 }, () => ({
-      x: Math.random() * 2000 - 1000,
-      y: Math.random() * 2000 - 1000,
-      z: Math.random() * 2000 - 1000,
-      size: Math.random() * 3 + 1,
-      opacity: Math.random() * 0.5 + 0.1,
-    }))
+  const [particles, setParticles] = React.useState<Array<{
+    x: number
+    y: number
+    z: number
+    size: number
+    opacity: number
+    duration: number
+  }>>([])
+  const [isClient, setIsClient] = React.useState(false)
+
+  React.useEffect(() => {
+    setIsClient(true)
+    setParticles(
+      Array.from({ length: 100 }, () => ({
+        x: Math.random() * 2000 - 1000,
+        y: Math.random() * 2000 - 1000,
+        z: Math.random() * 2000 - 1000,
+        size: Math.random() * 3 + 1,
+        opacity: Math.random() * 0.5 + 0.1,
+        duration: Math.random() * 10 + 10,
+      }))
+    )
   }, [])
+
+  if (!isClient) {
+    return <div className="absolute inset-0 overflow-hidden pointer-events-none" />
+  }
 
   return (
     <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -65,7 +83,7 @@ function ParticleField() {
             opacity: [particle.opacity, particle.opacity * 0.3, particle.opacity],
           }}
           transition={{
-            duration: Math.random() * 10 + 10,
+            duration: particle.duration,
             repeat: Infinity,
             ease: "linear",
           }}

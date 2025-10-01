@@ -97,6 +97,38 @@ const skills: Skill[] = [
     description: "High-level Python web framework for rapid development"
   },
   {
+    name: "FastAPI",
+    level: 85,
+    category: "Backend",
+    icon: "⚡",
+    color: "from-green-500 to-blue-500",
+    description: "Modern, fast web framework for building APIs with Python"
+  },
+  {
+    name: "Flask",
+    level: 80,
+    category: "Backend",
+    icon: "🌶️",
+    color: "from-red-500 to-orange-500",
+    description: "Lightweight Python web framework for microservices"
+  },
+  {
+    name: ".NET Core",
+    level: 85,
+    category: "Backend",
+    icon: "🔷",
+    color: "from-purple-500 to-blue-500",
+    description: "Cross-platform .NET framework for modern applications"
+  },
+  {
+    name: "C#",
+    level: 80,
+    category: "Programming",
+    icon: "💎",
+    color: "from-blue-600 to-purple-600",
+    description: "Object-oriented programming language for .NET applications"
+  },
+  {
     name: "PostgreSQL",
     level: 90,
     category: "Database",
@@ -303,10 +335,50 @@ const skills: Skill[] = [
     icon: "🎬",
     color: "from-pink-500 to-purple-500",
     description: "Animation library for React applications"
+  },
+  {
+    name: "Machine Learning",
+    level: 80,
+    category: "AI/ML",
+    icon: "🤖",
+    color: "from-purple-500 to-pink-500",
+    description: "Scikit-learn, XGBoost, PyTorch for predictive analytics"
+  },
+  {
+    name: "Plaid API",
+    level: 75,
+    category: "APIs",
+    icon: "🏦",
+    color: "from-blue-500 to-green-500",
+    description: "Financial data aggregation and banking APIs"
+  },
+  {
+    name: "Yahoo Finance API",
+    level: 80,
+    category: "APIs",
+    icon: "📈",
+    color: "from-green-500 to-blue-500",
+    description: "Real-time financial market data integration"
+  },
+  {
+    name: "Swagger/ReDoc",
+    level: 85,
+    category: "Tools",
+    icon: "📚",
+    color: "from-green-500 to-blue-500",
+    description: "API documentation and testing tools"
+  },
+  {
+    name: "Blockchain",
+    level: 70,
+    category: "Emerging",
+    icon: "⛓️",
+    color: "from-yellow-500 to-orange-500",
+    description: "Smart contracts and blockchain development"
   }
 ]
 
-const categories = ["All", "Programming", "Frameworks", "Frontend", "Backend", "Database", "DevOps", "Cloud", "Tools", "Architecture", "Security", "Testing"]
+const categories = ["All", "Programming", "Frameworks", "Frontend", "Backend", "Database", "DevOps", "Cloud", "Tools", "Architecture", "Security", "Testing", "AI/ML", "APIs", "Emerging"]
 
 export function Skills() {
   const [selectedCategory, setSelectedCategory] = React.useState("All")

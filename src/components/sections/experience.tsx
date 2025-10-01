@@ -22,50 +22,50 @@ interface Experience {
 const experiences: Experience[] = [
   {
     id: "1",
-    title: "Software Engineer",
-    company: "JP Morgan Chase & Co",
-    type: "Virtual Internship",
-    duration: "Sept 2025",
-    location: "Remote",
-    description: "Engineered Midas Core environment with Spring Boot, Kafka, SQL, and REST APIs, establishing a robust scaffold for transaction processing.",
+    title: "Full Stack Developer (Internship)",
+    company: "Bugbox",
+    type: "Real Internship",
+    duration: "Apr 2024 - Jun 2024",
+    location: "Melbourne, VIC",
+    description: "Developed responsive web applications using JavaScript and React, optimizing performance for 500+ users. Built Node.js back-end services with RESTful APIs, ensuring seamless integration and testing.",
     achievements: [
-      "Streamlined dependency management and automated testing",
-      "Ensured accurate outputs and maintainable, high-stakes codebase",
-      "Implemented enterprise-grade financial transaction processing"
+      "Served 500+ users with interactive coding platform",
+      "Accelerated app load time by 60% through API and UI optimization",
+      "Utilized Git for version control, resolving merge conflicts and adhering to branching strategies"
     ],
-    technologies: ["Spring Boot", "Apache Kafka", "SQL", "REST APIs", "Java"],
+    technologies: ["React", "Node.js", "MongoDB", "JavaScript", "REST APIs", "Git"],
     featured: true
   },
   {
     id: "2",
     title: "Software Engineer",
-    company: "Hewlett Packard Enterprise",
+    company: "JP Morgan Chase & Co",
     type: "Virtual Internship",
-    duration: "Aug 2025",
+    duration: "Sept 2024",
     location: "Remote",
-    description: "Designed RESTful employee management service on GreenLake Cloud using Spring Boot, delivering scalable CRUD operations.",
+    description: "Designed Single Page Applications with React and TypeScript, focusing on adaptive design principles. Implemented AWS-based deployments (EC2, S3), enhancing scalability of financial solutions.",
     achievements: [
-      "Strengthened reliability and quality assurance",
-      "Implemented HTTP POST support and unit tests with Mockito/JUnit",
-      "Reduced runtime errors significantly"
+      "Configured Jenkins CI/CD pipelines to automate testing and deployment processes",
+      "Built Midas Banking APIs for balances and incentives using Spring Boot",
+      "Followed enterprise Spring Boot + Maven architecture patterns"
     ],
-    technologies: ["Spring Boot", "GreenLake Cloud", "REST APIs", "Mockito", "JUnit"],
+    technologies: ["React", "TypeScript", "AWS", "Jenkins", "Spring Boot", "Maven"],
     featured: true
   },
   {
     id: "3",
     title: "Software Engineer",
-    company: "Electronic Arts",
+    company: "Telstra",
     type: "Virtual Internship",
-    duration: "Jul 2025",
+    duration: "Aug 2024",
     location: "Remote",
-    description: "Spearheaded gameplay feature proposals and class diagram design, aligning new mechanics with existing systems for seamless integration.",
+    description: "Developed front-end interfaces with JavaScript and React, ensuring responsive design across devices. Conducted unit testing and integration testing to validate application functionality.",
     achievements: [
-      "Optimized C++ data structures for better performance",
-      "Implemented inventory patches enhancing system reliability",
-      "Improved player experience through system optimization"
+      "Enhanced backend services with clean architecture and automated testing",
+      "Applied SonarQube + Checkstyle for code quality and reliability",
+      "Collaborated using Git, managing merges and maintaining code quality"
     ],
-    technologies: ["C++", "Game Development", "System Design", "UML", "Data Structures"],
+    technologies: ["JavaScript", "React", "Unit Testing", "Integration Testing", "Git", "SonarQube"],
     featured: true
   },
   {
@@ -73,64 +73,32 @@ const experiences: Experience[] = [
     title: "Software Engineer",
     company: "Citi Bank",
     type: "Virtual Internship",
-    duration: "June 2025",
+    duration: "Jul 2024",
     location: "Remote",
-    description: "Visualized loan workflows with UML state diagrams and proposed ML-driven credit risk models, driving efficiency in loan approval processes.",
+    description: "Built Node.js back-end components, integrating with AWS Lambda for real-time processing. Performed automation testing within CI/CD workflows using Jenkins.",
     achievements: [
       "Developed real-time stock monitoring app in Java with Yahoo Finance API",
-      "Created JavaFX interface for actionable insights",
-      "Proposed ML-driven credit risk models"
+      "Applied thread-safe concurrency via BlockingQueue",
+      "Supported data-driven product features with strong testing focus"
     ],
-    technologies: ["Java", "JavaFX", "Yahoo Finance API", "UML", "Machine Learning", "Data Visualization"],
+    technologies: ["Node.js", "AWS Lambda", "Jenkins", "Java", "Yahoo Finance API", "BlockingQueue"],
     featured: false
   },
   {
     id: "5",
     title: "Software Engineer",
-    company: "Telstra",
+    company: "Hewlett Packard Enterprise",
     type: "Virtual Internship",
-    duration: "Apr 2025",
+    duration: "Jun 2024",
     location: "Remote",
-    description: "Orchestrated SIM activation REST controller in Spring Boot, integrating actuator services for precise success/failure handling.",
+    description: "Built a RESTful service exposing /employees endpoint with sample employee records. Modular design with EmployeeManager + Controller classes.",
     achievements: [
-      "Enhanced backend traceability by logging transactions",
-      "Configured Java 11 microservices",
-      "Improved system reliability and audit readiness"
+      "Designed RESTful employee management service using Spring Boot",
+      "Implemented HTTP POST support and unit tests with Mockito/JUnit",
+      "Delivered scalable CRUD operations for employee data"
     ],
-    technologies: ["Spring Boot", "Java 11", "Microservices", "REST Controllers", "Actuator Services"],
+    technologies: ["Spring Boot", "REST APIs", "Mockito", "JUnit", "Java", "Maven"],
     featured: false
-  },
-  {
-    id: "6",
-    title: "Software Engineer",
-    company: "Commonwealth Bank",
-    type: "Virtual Internship",
-    duration: "Oct 2024",
-    location: "Remote",
-    description: "Accomplished intuitive iOS home-screen widgets by creating 3 scalable layouts, enabling clear display of balances and recent transactions.",
-    achievements: [
-      "Elevated feature planning and governance",
-      "Gathered stakeholder requirements and defined BDD criteria",
-      "Improved security and marketing insights"
-    ],
-    technologies: ["iOS Development", "Widget Development", "BDD", "Stakeholder Management"],
-    featured: false
-  },
-  {
-    id: "7",
-    title: "Full Stack Developer (Internship)",
-    company: "Bugbox",
-    type: "Real Internship",
-    duration: "Apr 24 - June 24",
-    location: "Melbourne, VIC",
-    description: "Built web interface using React, Node.js, and MongoDB for 500+ users. Integrated Blockly and scripts to enable dual-mode interactive coding experience.",
-    achievements: [
-      "Accelerated app load time by 60% through API and UI optimization",
-      "Served 500+ users with interactive coding platform",
-      "Integrated Blockly for enhanced user experience"
-    ],
-    technologies: ["React", "Node.js", "MongoDB", "Blockly", "API Optimization", "UI/UX"],
-    featured: true
   }
 ]
 
@@ -141,7 +109,7 @@ export function Experience() {
     selectedType === "All" || exp.type === selectedType
   )
 
-  const experienceTypes = ["All", "Virtual Internship", "Real Internship"]
+  const experienceTypes = ["All", "Real Internship", "Virtual Internship"]
 
   return (
     <section id="experience" className="py-20 bg-background">
@@ -271,7 +239,7 @@ export function Experience() {
           className="mt-16 grid grid-cols-1 md:grid-cols-4 gap-8"
         >
           <div className="text-center">
-            <div className="text-3xl font-bold text-primary mb-2">6</div>
+            <div className="text-3xl font-bold text-primary mb-2">4</div>
             <div className="text-muted-foreground">Virtual Internships</div>
           </div>
           <div className="text-center">
@@ -279,11 +247,11 @@ export function Experience() {
             <div className="text-muted-foreground">Real Internship</div>
           </div>
           <div className="text-center">
-            <div className="text-3xl font-bold text-primary mb-2">7</div>
+            <div className="text-3xl font-bold text-primary mb-2">5</div>
             <div className="text-muted-foreground">Companies</div>
           </div>
           <div className="text-center">
-            <div className="text-3xl font-bold text-primary mb-2">2+</div>
+            <div className="text-3xl font-bold text-primary mb-2">3+</div>
             <div className="text-muted-foreground">Years Experience</div>
           </div>
         </motion.div>

@@ -8,60 +8,48 @@ import { Badge } from "@/components/ui/badge"
 
 export function About() {
   const stats = [
-    { icon: Code, label: "Projects Completed", value: "6+" },
-    { icon: Users, label: "Virtual Internships", value: "6" },
+    { icon: Code, label: "Projects Completed", value: "15+" },
+    { icon: Users, label: "Users Served", value: "500+" },
     { icon: Award, label: "Certifications", value: "3+" },
-    { icon: Zap, label: "TPS Achieved", value: "10,000+" }
+    { icon: Zap, label: "Performance Improvement", value: "60%" }
   ]
 
   const achievements = [
     {
       icon: Briefcase,
+      title: "Bugbox - Full Stack Developer (Real Internship)",
+      period: "Apr-Jun 2024",
+      description: "Developed responsive web applications using JavaScript and React, optimizing performance for 500+ users"
+    },
+    {
+      icon: Briefcase,
       title: "JP Morgan Chase & Co - Virtual Internship",
-      period: "Sept 2025",
-      description: "Software Engineer - Engineered Midas Core environment with Spring Boot, Kafka, SQL, and REST APIs"
-    },
-    {
-      icon: Briefcase,
-      title: "Hewlett Packard Enterprise - Virtual Internship",
-      period: "Aug 2025",
-      description: "Software Engineer - Designed RESTful employee management service on GreenLake Cloud using Spring Boot"
-    },
-    {
-      icon: Briefcase,
-      title: "Electronic Arts - Virtual Internship",
-      period: "Jul 2025",
-      description: "Software Engineer - Spearheaded gameplay feature proposals and class diagram design"
-    },
-    {
-      icon: Briefcase,
-      title: "Citi Bank - Virtual Internship",
-      period: "June 2025",
-      description: "Software Engineer - Visualized loan workflows with UML state diagrams and proposed ML-driven credit risk models"
+      period: "Sept 2024",
+      description: "Designed Single Page Applications with React and TypeScript, implemented AWS-based deployments"
     },
     {
       icon: Briefcase,
       title: "Telstra - Virtual Internship",
-      period: "Apr 2025",
-      description: "Software Engineer - Orchestrated SIM activation REST controller in Spring Boot"
+      period: "Aug 2024",
+      description: "Developed front-end interfaces with JavaScript and React, conducted unit and integration testing"
     },
     {
       icon: Briefcase,
-      title: "Commonwealth Bank - Virtual Internship",
-      period: "Oct 2024",
-      description: "Software Engineer - Accomplished intuitive iOS home-screen widgets by creating 3 scalable layouts"
+      title: "Citi Bank - Virtual Internship",
+      period: "Jul 2024",
+      description: "Built Node.js back-end components, developed real-time stock monitoring app with Yahoo Finance API"
     },
     {
       icon: Briefcase,
-      title: "Bugbox - Full Stack Developer",
-      period: "Apr-Jun 2024",
-      description: "Built web interface using React, Node.js, and MongoDB for 500+ users"
+      title: "Hewlett Packard Enterprise - Virtual Internship",
+      period: "Jun 2024",
+      description: "Built RESTful service with Spring Boot, implemented unit tests with Mockito/JUnit"
     },
     {
       icon: GraduationCap,
       title: "Deakin University",
       period: "Oct 2020 – Jun 2024",
-      description: "Bachelor of Software Engineering (Honours)"
+      description: "Bachelor of Software Engineering (Honours) - Led team project using JavaScript and React"
     }
   ]
 
@@ -80,15 +68,15 @@ export function About() {
                 About <span className="gradient-text">Me</span>
               </h2>
               <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-                I&apos;m an innovative IT Graduate with hands-on experience in cloud computing, 
-                software development, and cybersecurity. I have a strong knack for solving 
-                real-world problems through technology and am eager to contribute fresh ideas, 
-                strong technical skills, and a growth mindset to dynamic teams.
+                I&apos;m a proactive Deakin Software Engineering (Honours) graduate with over 3 years of experience 
+                in full-stack development, specializing in JavaScript, React, Node.js, TypeScript, and AWS. 
+                I have a strong focus on responsive design, unit testing, and CI/CD pipelines using Jenkins and Git. 
+                I&apos;m passionate about building innovative, customer-facing solutions in collaborative, data-driven environments.
               </p>
               <p className="text-lg text-muted-foreground leading-relaxed mb-8">
-                As a recent graduate from Deakin University with a Bachelor of Software Engineering (Honours), 
-                I bring fresh perspectives and modern technical skills to every project. I&apos;m passionate 
-                about continuous learning and staying up-to-date with the latest technologies.
+                With experience serving 500+ users and achieving 60% performance improvements, I bring both 
+                technical expertise and real-world impact to every project. I&apos;m particularly passionate about 
+                FinTech, AI-powered solutions, and building scalable enterprise applications that solve complex problems.
               </p>
             </div>
 
