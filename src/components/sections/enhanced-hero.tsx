@@ -3,7 +3,7 @@
 import * as React from "react"
 import { motion, useAnimation } from "framer-motion"
 import { Canvas } from "@react-three/fiber"
-import { OrbitControls, Sphere, MeshDistortMaterial, Text3D } from "@react-three/drei"
+import { OrbitControls, Sphere, MeshDistortMaterial, Text } from "@react-three/drei"
 import { Button } from "@/components/ui/button"
 import { ArrowDown, Download, Github, Linkedin, Sparkles, Zap, Code, Rocket } from "lucide-react"
 import { cn } from "@/lib/utils"
@@ -33,20 +33,20 @@ function EnhancedAnimatedSphere() {
       </Sphere>
       {/* Floating skill badges around the sphere */}
       {["Java", "React", "Python", "AWS", "Docker"].map((skill, index) => (
-        <Text3D
+        <Text
           key={skill}
-          font="/fonts/helvetiker_regular.typeface.json"
-          size={0.1}
-          height={0.02}
           position={[
             Math.cos((index * Math.PI * 2) / 5) * 2.5,
             Math.sin((index * Math.PI * 2) / 5) * 2.5,
             Math.sin((index * Math.PI * 2) / 5) * 0.5
           ]}
+          fontSize={0.2}
+          color="#6366f1"
+          anchorX="center"
+          anchorY="middle"
         >
           {skill}
-          <meshStandardMaterial color="#6366f1" />
-        </Text3D>
+        </Text>
       ))}
     </group>
   )
